@@ -28,4 +28,23 @@ class model:
         except Exception as erro:
             return erro
 
+    def atualizar(self, campo, novoDado, cod):
+        try:
+            sql = "update pessoa set {} = '{}' where codigo = '{}'".format(campo, novoDado, cod)
+            self.con.execute(sql)
+            self.db_connection.commit()
+            return "{} linha atualizada!".format(self.con.rowcount)
+        except Exception as erro:
+            return erro
+
+    def excluir(self, cod):
+        try:
+            sql = "delete from pessoa where codigo = '{}'".format(cod)
+            self.con.execute(sql)
+            self.db_connection.commit()
+            return "{} linha excluida!".format(self.con.rowcount)
+        except Exception as erro:
+            return erro
+
+
 

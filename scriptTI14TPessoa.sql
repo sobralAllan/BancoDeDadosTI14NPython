@@ -9,3 +9,5 @@ create table pessoa(
     endereco varchar(220) not null,
     dataDeNascimento date not null
 ) engine = InnoDB;
+
+select * from pessoa;
